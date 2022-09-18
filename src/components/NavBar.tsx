@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 //--------------------------------------------
 // Global Components
-import Dropdown from "components/Dropdown";
+// import Dropdown from "components/Dropdown";
 import NavButton from "components/NavButton";
 
 //--------------------------------------------
@@ -11,14 +11,14 @@ import NavButton from "components/NavButton";
 
 //--------------------------------------------
 // Modules
-import { Droplink } from "types";
+// import { Droplink } from "types";
 
 //--------------------------------------------
 // Global Variables/Constants
 const LINKS = [
   {
     name: "HOME",
-    url: "/",
+    url: "/home",
   },
   // {
   //   name: "PROMISED LAND",
@@ -30,16 +30,16 @@ const LINKS = [
   // },
 ];
 
-const DROPDOWN: Droplink[] = [
-  {
-    name: "Name Here",
-    path: "/test1", // <Link> path
-  },
-  {
-    name: "Name Here",
-    path: "/test2", // <Link> path
-  },
-];
+// const DROPDOWN: Droplink[] = [
+//   {
+//     name: "Name Here",
+//     path: "/test1", // <Link> path
+//   },
+//   {
+//     name: "Name Here",
+//     path: "/test2", // <Link> path
+//   },
+// ];
 
 const SOCIALS = [
   {
