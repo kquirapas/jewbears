@@ -80,11 +80,12 @@ const Landing: FC = () => {
     }
   };
 
+  // TODO: Make JEWS height responsive
   return (
     <>
       <Navbar />
       <main className="relative flex min-h-screen flex-col items-center justify-center bg-primary">
-        <section className=" z-10 flex h-full w-screen -translate-y-10 flex-col items-center justify-center bg-red-400">
+        <section className=" z-10 flex h-full w-screen -translate-y-10 flex-col items-center justify-center">
           <h1 className="h-20 font-outfit-regular text-3xl">{caption}</h1>
           <div className="flex h-[50%] max-h-96 w-screen justify-center ">
             {LETTERS.map((e, idx) => {

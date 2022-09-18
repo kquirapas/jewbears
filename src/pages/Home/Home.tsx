@@ -18,7 +18,7 @@ const Home: FC = () => {
     <>
       <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-center bg-primary bg-ilanit bg-cover">
-        <header className="box-border grid h-screen w-screen grid-cols-[2fr_3fr] bg-primary/50 px-20">
+        <header className="box-border grid h-screen w-screen grid-cols-2 bg-primary/50 px-20">
           <aside className="flex flex-col justify-center">
             <p className="font-outfit-bold text-2xl tracking-widest text-letter">
               100% KOSHER
@@ -34,9 +34,17 @@ const Home: FC = () => {
               </span>
             </div>
           </aside>
-          <aside className="flex flex-col justify-center">
-            <img src="Assets per page/syn1.png" alt="Synagogue 1" />
-            <img src="Assets per page/syn2.png" alt="Synagogue 2" />
+          <aside className="relative flex flex-col items-center justify-center">
+            <img
+              className="absolute w-4/5"
+              src="Assets per page/2 home page/syn2.png"
+              alt="Synagogue 2"
+            />
+            <img
+              className="absolute w-4/5 transition-opacity duration-[1s] hover:opacity-0"
+              src="Assets per page/2 home page/syn1.png"
+              alt="Synagogue 1"
+            />
           </aside>
         </header>
       </main>
