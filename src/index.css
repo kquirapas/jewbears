@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Fonts */
+@font-face {
+	font-family: "Cheddar Gothic Light";
+	src: url("../public/Font/CheddarGothicSansTwo-Light.ttf") format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: "Cheddar Gothic Regular";
+	src: url("../public/Font/CheddarGothicSansTwo-Regular.ttf") format('truetype');
 }
+
+@font-face {
+	font-family: "Cheddar Gothic Bold";
+	src: url("../public/Font/CheddarGothicSansTwo-Bold.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Cheddar Gothic Black";
+	src: url("../public/Font/CheddarGothicSansTwo-Black.ttf") format('truetype');
+}
+
+/* Fonts */
+@font-face {
+	font-family: "Outfit Light";
+	src: url("../public/Font/Outfit-Light.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Outfit Regular";
+	src: url("../public/Font/Outfit-Regular.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Outfit Bold";
+	src: url("../public/Font/Outfit-Bold.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Outfit Medium";
+	src: url("../public/Font/Outfit-Medium.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Outfit Black";
+	src: url("../public/Font/Outfit-Black.ttf") format('truetype');
+}
+
+
+/* Styles */
