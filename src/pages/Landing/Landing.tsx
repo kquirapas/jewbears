@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useRef, useState } from "react";
 
 //--------------------------------------------
 // Global Components
@@ -49,6 +49,8 @@ const Landing: FC = () => {
   const [caption, setCaption] = useState("");
   const [background, setBackground] = useState("");
 
+  const bgRef = useRef<HTMLImageElement>(null);
+
   const enable = (idx: number, caption: string) => {
     setHovering(idx);
     setCaption(caption);
@@ -59,21 +61,40 @@ const Landing: FC = () => {
     setCaption("");
   };
 
-  const changeBg = () => {};
+  const changeBg = (idx: number) => {
+    if (idx >= 0) {
+      setBackground(LETTERS[idx].background);
+
+      /*
+       * @dev hacky way to create the fade on click animation
+       * https://stackoverflow.com/questions/6268508/restart-animation-in-css3-any-better-way-than-removing-the-element
+       */
+      if (bgRef.current) {
+        bgRef.current.style.animation = "none";
+
+        // offsetWidth is called to force Reflow
+        void bgRef.current.offsetWidth;
+
+        bgRef.current.style.animation = "";
+      }
+    }
+  };
 
   return (
     <>
       <Navbar />
-      <main className="flex h-screen min-h-screen flex-col items-center justify-center bg-primary">
-        <section className="relative flex h-full w-screen -translate-y-10 flex-col items-center justify-center">
-          <h1 className="h-14 font-outfit-regular text-3xl">{caption}</h1>
+      <main className="relative flex min-h-screen flex-col items-center justify-center bg-primary">
+        <section className=" z-10 flex h-full w-screen -translate-y-10 flex-col items-center justify-center bg-red-400">
+          <h1 className="h-20 font-outfit-regular text-3xl">{caption}</h1>
           <div className="flex h-[50%] max-h-96 w-screen justify-center ">
             {LETTERS.map((e, idx) => {
               return (
                 <div
-                  className="flex justify-center hover:cursor-pointer"
+                  onClick={() => changeBg(idx)}
                   onMouseEnter={() => enable(idx, e.caption)}
                   onMouseLeave={disable}
+                  key={idx}
+                  className="flex justify-center hover:cursor-pointer"
                 >
                   {hovering === idx ? (
                     <img
@@ -93,7 +114,14 @@ const Landing: FC = () => {
             })}
           </div>
         </section>
-        <img src="" alt="" />
+        {background !== "" && (
+          <img
+            ref={bgRef}
+            className="fixed animate-opacity-fade"
+            src={background}
+            alt="Background"
+          />
+        )}
       </main>
     </>
   );

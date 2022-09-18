@@ -3,7 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        ilanit: "url('../public/Assets per page/2 home page/ilanit.png')",
+      },
       colors: {
         primary: "#fff9f0",
         navigation: "#916b46",
@@ -25,13 +27,19 @@ module.exports = {
         "outfit-bold": ["Outfit Bold"],
         "outfit-black": ["Outfit Black"],
       },
-      // keyframes: {
-      //   "background-fade": {
-      //     '0%': {
-      //
-      //     }
-      //   }
-      // }
+      animation: {
+        "opacity-fade": `fade 3s ease-out forwards`,
+      },
+      keyframes: {
+        fade: {
+          from: {
+            opacity: 80,
+          },
+          to: {
+            opacity: 0,
+          },
+        },
+      },
     },
   },
   plugins: [],

@@ -61,35 +61,37 @@ const SOCIALS = [
 
 const Navbar: FC = () => {
   return (
-    <nav className="fixed z-50 box-border flex h-20 w-screen flex-row items-center justify-between bg-primary px-8">
-      <Link to="/">
-        <img
-          className="h-10"
-          src="Assets/Jews Bear Logo.png"
-          alt="Jews Okay Bears Logo"
-        />
-      </Link>
-      <div className="flex">
-        {LINKS.map((e, idx) => (
-          <NavButton key={idx}>
-            <Link to="/">
-              <span>{e.name}</span>
-            </Link>
-          </NavButton>
-        ))}
+    <nav className="fixed z-50 flex w-screen justify-center bg-primary">
+      <div className="box-border flex h-24 w-screen max-w-[1400px] flex-row items-center justify-between bg-primary px-8">
+        <Link to="/">
+          <img
+            className="h-14"
+            src="Assets/Jews Bear Logo.png"
+            alt="Jews Okay Bears Logo"
+          />
+        </Link>
+        <div className="flex">
+          {LINKS.map((e, idx) => (
+            <NavButton key={idx}>
+              <Link to={e.url}>
+                <span>{e.name}</span>
+              </Link>
+            </NavButton>
+          ))}
 
-        {SOCIALS.map((e, idx) => (
-          <NavButton key={idx}>
-            <a
-              className="block"
-              href={e.url}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img className="h-5" src={e.icon} alt={e.name} />
-            </a>
-          </NavButton>
-        ))}
+          {SOCIALS.map((e, idx) => (
+            <NavButton key={idx}>
+              <a
+                className="block"
+                href={e.url}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img className="h-4" src={e.icon} alt={e.name} />
+              </a>
+            </NavButton>
+          ))}
+        </div>
       </div>
     </nav>
   );
