@@ -4,9 +4,9 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
-import Landing from "./pages/Landing/Landing";
-import NotFound from "./pages/NotFound/NotFound";
+import Home from "pages/Home/Home";
+import Landing from "pages/Landing/Landing";
+import NotFound from "pages/NotFound/NotFound";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

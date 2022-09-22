@@ -12,8 +12,9 @@ import { FC } from "react";
 //--------------------------------------------
 // Global Variables/Constants
 type Props = {
-  src: string;
   alt: string;
+  reference: any;
+  src: string;
   styling?: string;
 };
 
@@ -21,7 +22,7 @@ type Props = {
  * Responsive image that sets the image dimension along the
  * main axis to take the entire space of the viewport
  */
-const Rimage: FC<Props> = ({ src, alt, styling }) => {
+const Rimage: FC<Props> = ({ src, alt, styling, reference }) => {
   const axis = (() => {
     const width = document.documentElement.clientWidth;
     const height = document.documentElement.clientHeight;
@@ -32,6 +33,7 @@ const Rimage: FC<Props> = ({ src, alt, styling }) => {
   if (axis === "x") {
     return (
       <img
+        ref={reference}
         className={`aspect-auto h-auto w-screen object-cover ${styling}`}
         src={src}
         alt={alt}

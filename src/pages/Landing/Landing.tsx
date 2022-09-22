@@ -1,8 +1,9 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 //--------------------------------------------
 // Global Components
 import Navbar from "components/NavBar";
+import Rimage from "components/Rimage";
 
 //--------------------------------------------
 // Domain Specific Components
@@ -47,6 +48,7 @@ const LETTERS = [
 const Landing: FC = () => {
   const [hovering, setHovering] = useState(-1);
   const [caption, setCaption] = useState("");
+  // background image path string
   const [background, setBackground] = useState("");
 
   const bgRef = useRef<HTMLImageElement>(null);
@@ -64,21 +66,21 @@ const Landing: FC = () => {
   const changeBg = (idx: number) => {
     if (idx >= 0) {
       setBackground(LETTERS[idx].background);
-
-      /*
-       * @dev hacky way to create the fade on click animation
-       * https://stackoverflow.com/questions/6268508/restart-animation-in-css3-any-better-way-than-removing-the-element
-       */
-      if (bgRef.current) {
-        bgRef.current.style.animation = "none";
-
-        // offsetWidth is called to force Reflow
-        void bgRef.current.offsetWidth;
-
-        bgRef.current.style.animation = "";
-      }
     }
   };
+
+  useEffect(() => {
+    /*
+     * @dev hacky way to create the fade on click animation
+     * https://stackoverflow.com/questions/6268508/restart-animation-in-css3-any-better-way-than-removing-the-element
+     */
+    if (bgRef.current) {
+      bgRef.current.style.animation = "none";
+      // offsetWidth is called to force Reflow
+      void bgRef.current.offsetWidth;
+      bgRef.current.style.animation = "";
+    }
+  }, [background]);
 
   // TODO: Make JEWS height responsive
   return (
@@ -87,27 +89,27 @@ const Landing: FC = () => {
       <main className="relative flex min-h-screen flex-col items-center justify-center bg-primary">
         <section className=" z-10 flex h-full w-screen -translate-y-10 flex-col items-center justify-center">
           <h1 className="h-20 font-outfit-regular text-3xl">{caption}</h1>
-          <div className="flex h-[50%] max-h-96 w-screen justify-center ">
+          <div className="flex w-screen justify-center ">
             {LETTERS.map((e, idx) => {
               return (
                 <div
+                  className="flex justify-center hover:cursor-pointer"
+                  key={idx}
                   onClick={() => changeBg(idx)}
                   onMouseEnter={() => enable(idx, e.caption)}
                   onMouseLeave={disable}
-                  key={idx}
-                  className="flex justify-center hover:cursor-pointer"
                 >
                   {hovering === idx ? (
                     <img
+                      alt={e.name}
                       className="h-full"
                       src={e.activeImgPath}
-                      alt={e.name}
                     />
                   ) : (
                     <img
+                      alt={e.name}
                       className="h-full"
                       src={e.inactiveImgPath}
-                      alt={e.name}
                     />
                   )}
                 </div>
@@ -116,11 +118,11 @@ const Landing: FC = () => {
           </div>
         </section>
         {background !== "" && (
-          <img
-            ref={bgRef}
-            className="fixed animate-opacity-fade"
-            src={background}
+          <Rimage
             alt="Background"
+            reference={bgRef}
+            styling="fixed animate-opacity-fade"
+            src={background}
           />
         )}
       </main>

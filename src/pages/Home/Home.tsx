@@ -6,6 +6,7 @@ import Navbar from "components/NavBar";
 
 //--------------------------------------------
 // Domain Specific Components
+import GuestTicker from "./components/GuestTicker";
 
 //--------------------------------------------
 // Modules
@@ -47,6 +48,21 @@ const Home: FC = () => {
             />
           </aside>
         </header>
+        <div className="grid w-screen grid-cols-[1fr_2fr] bg-primary p-6">
+          <aside className="flex items-center justify-center p-2">
+            <span className="flex items-center">
+              <span className="text-right font-cheddar-regular text-base tracking-[6px]">
+                RECENT REGISTRATIONS
+              </span>
+              <span className="ml-2 block flex h-4 w-4 items-center justify-center rounded-full bg-bold p-1 text-sm text-white">
+                ?
+              </span>
+            </span>
+          </aside>
+          <aside className="flex items-center">
+            <GuestTicker />
+          </aside>
+        </div>
       </main>
     </>
   );

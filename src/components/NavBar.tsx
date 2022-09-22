@@ -61,8 +61,8 @@ const SOCIALS = [
 
 const Navbar: FC = () => {
   return (
-    <nav className="fixed z-50 flex w-screen justify-center bg-primary">
-      <div className="box-border flex h-24 w-screen max-w-[1400px] flex-row items-center justify-between bg-primary px-8">
+    <nav className="fixed z-50 flex w-screen justify-center">
+      <div className="box-border flex h-24 w-screen max-w-[1400px] flex-row items-center justify-between px-8">
         <Link to="/">
           <img
             className="h-14"
