@@ -115,16 +115,16 @@ const SOCIALS = [
     icon: "Assets/Buttons/twitter.svg",
     url: "https://twitter.com/TheJewsOKB",
   },
-  {
-    name: "Discord",
-    icon: "Assets/Buttons/discord.svg",
-    url: "#",
-  },
-  {
-    name: "OpenSea",
-    icon: "Assets/Buttons/opensea.png",
-    url: "#",
-  },
+  // {
+  //   name: "Discord",
+  //   icon: "Assets/Buttons/discord.svg",
+  //   url: "#",
+  // },
+  // {
+  //   name: "OpenSea",
+  //   icon: "Assets/Buttons/opensea.png",
+  //   url: "#",
+  // },
 ];
 
 const Home: FC = () => {
@@ -290,6 +290,7 @@ const Home: FC = () => {
         <span className="flex items-center">
           {SOCIALS.map((e, idx) => (
             <a
+              key={idx}
               className="mx-3 block"
               href={e.url}
               target="_blank"

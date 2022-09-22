@@ -75,7 +75,7 @@ const Landing: FC = () => {
      * https://stackoverflow.com/questions/6268508/restart-animation-in-css3-any-better-way-than-removing-the-element
      */
     if (bgRef.current) {
-      bgRef.current.style.animation = "none";
+      bgRef.current.style.animation = "opacity-fade";
       // offsetWidth is called to force Reflow
       void bgRef.current.offsetWidth;
       bgRef.current.style.animation = "";
