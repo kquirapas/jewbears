@@ -13,12 +13,10 @@ import { FC } from "react";
 // Global Variables/Constants
 type Props = {
   symbol: string;
-  style?: string;
+  styling?: string;
 };
 
-const Icon: FC<Props> = ({ symbol, style }) => {
-  const styling = style && "";
-
+const Icon: FC<Props> = ({ symbol, styling }) => {
   return (
     <span className={`material-symbols-rounded ${styling}`}>{symbol}</span>
   );

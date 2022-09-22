@@ -25,7 +25,7 @@ const GuestTicker: FC = () => {
     // slide the guests ticker
     setInterval(() => {
       setLeft((prev) => prev - 1);
-    }, 20);
+    }, 50);
   }, []);
 
   useEffect(() => {
@@ -39,19 +39,17 @@ const GuestTicker: FC = () => {
         setLeft(holderRef.current.offsetWidth);
       }
 
+      // update position
       slidingRef.current.style.left = `${left}px`;
     }
   }, [left]);
 
   return (
-    <div
-      ref={holderRef}
-      className="relative h-full w-full overflow-hidden bg-blue-400"
-    >
-      <div ref={slidingRef} className={`absolute flex bg-red-400`}>
+    <div ref={holderRef} className="relative h-full w-full overflow-hidden">
+      <div ref={slidingRef} className={`absolute flex`}>
         {guests.map((e, idx) => (
           <div className="flex items-center" key={idx}>
-            <div className="flex flex-col items-end justify-center">
+            <div className="flex w-[200px] flex-col items-center justify-center">
               <span className="font-outfit-regular text-base tracking-widest text-bold">
                 {e.name}
               </span>
@@ -59,7 +57,9 @@ const GuestTicker: FC = () => {
                 {getTimePassed(e.timestamp)}
               </span>
             </div>
-            <span className="mx-8 h-2 w-2 rounded-full bg-bold"></span>
+            {idx < guests.length - 1 && (
+              <span className="mx-8 h-2 w-2 rounded-full bg-bold"></span>
+            )}
           </div>
         ))}
       </div>
