@@ -65,7 +65,7 @@ const Navbar: FC = () => {
       <div className="box-border flex h-24 w-screen max-w-[1400px] flex-row items-center justify-between px-8">
         <Link to="/">
           <img
-            className="h-14"
+            className="h-10 md:h-14"
             src="Assets/Jews Bear Logo.png"
             alt="Jews Okay Bears Logo"
           />

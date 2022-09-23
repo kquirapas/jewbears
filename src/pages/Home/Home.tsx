@@ -1,156 +1,45 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 
 //--------------------------------------------
 // Global Components
+import Footer from "components/Footer";
 import Navbar from "components/NavBar";
-import Toggle from "components/Toggle";
 
 //--------------------------------------------
 // Domain Specific Components
-import GuestTicker from "./components/GuestTicker";
+import Faqs from "./components/Faqs";
+import Registrations from "./components/Registrations";
+import Team from "./components/Team";
 
 //--------------------------------------------
 // Modules
 
 //--------------------------------------------
 // Global Variables/Constants
-const TEAM = [
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-  {
-    name: "Avraham",
-    position: "FOUNDER",
-    description:
-      "With tertiary degrees in graphic design, art history and branding, Kais brings his strategic experience in building and leading design projects for many global brands including Unicef, United Nations, Unilever, Greenpeace, Ford, Dell and Olympus.",
-    imgPath: "Assets per page/2 home page/Bears/1.png",
-  },
-];
-
-const FAQS = [
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-  {
-    heading: "WHAT IS THE TOTAL SUPPLY?",
-    body: "COLLECTION OF 7,777 JEWISH OKAY BEARS NFTS",
-  },
-];
-
-const SOCIALS = [
-  {
-    name: "Twitter",
-    icon: "Assets/Buttons/twitter.svg",
-    url: "https://twitter.com/TheJewsOKB",
-  },
-  // {
-  //   name: "Discord",
-  //   icon: "Assets/Buttons/discord.svg",
-  //   url: "#",
-  // },
-  // {
-  //   name: "OpenSea",
-  //   icon: "Assets/Buttons/opensea.png",
-  //   url: "#",
-  // },
-];
-
 const Home: FC = () => {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col items-center justify-center bg-primary bg-ilanit bg-cover">
-        <header className="box-border grid h-screen w-screen grid-cols-2 bg-primary/50 px-20">
-          <aside className="flex flex-col justify-center">
-            <p className="font-outfit-bold text-2xl tracking-widest text-letter">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-primary bg-ilanit bg-cover bg-bottom">
+        <header className="mt-32 box-border grid h-auto w-screen grid-cols-1 bg-primary/50 px-10 md:mt-0 md:h-screen md:grid-cols-2 md:px-20">
+          <aside className="flex flex-col items-center justify-center md:items-start">
+            <p className="font-outfit-bold text-xl tracking-widest text-letter md:text-2xl">
               100% KOSHER
             </p>
 
-            <h1 className="my-8 font-cheddar-bold text-8xl text-bold">
+            <h1 className="my-8 text-center font-cheddar-bold text-6xl text-bold md:text-left md:text-8xl">
               THE JEWS GOT EACH OTHER'S BACK
             </h1>
 
-            <div className="grid w-fit grid-cols-2">
+            <div className="grid-cols1 grid w-fit">
               <span className="block w-fit border-2 border-bold bg-primary py-2 px-3 font-outfit-bold text-base tracking-widest text-bold hover:cursor-pointer hover:bg-transparent hover:text-bold">
                 WHITEPAPER
               </span>
             </div>
           </aside>
-          <aside className="relative flex flex-col items-center justify-center">
+          <aside className="relative flex justify-center py-20 md:items-center md:p-0">
             <img
-              className="absolute w-4/5"
+              className=" w-4/5"
               src="Assets per page/2 home page/syn2.png"
               alt="Synagogue 2"
             />
@@ -162,23 +51,9 @@ const Home: FC = () => {
           </aside>
         </header>
 
-        <section className="grid w-screen grid-cols-[1fr_2fr] bg-primary p-12">
-          <aside className="flex items-center justify-center p-2">
-            <span className="flex items-center">
-              <span className="text-right font-cheddar-regular text-base tracking-[6px]">
-                RECENT REGISTRATIONS
-              </span>
-              <span className="ml-2 block flex h-4 w-4 items-center justify-center rounded-full bg-bold p-1 text-sm text-white">
-                ?
-              </span>
-            </span>
-          </aside>
-          <aside className="flex items-center">
-            <GuestTicker />
-          </aside>
-        </section>
+        <Registrations />
 
-        <section className="relative grid grid-cols-2 bg-primary py-32 px-52">
+        <section className="relative grid grid-cols-1 overflow-hidden bg-primary py-32 px-[10vw] md:grid-cols-2">
           <aside className="flex flex-col justify-center">
             <h1 className="pb-10 font-cheddar-regular text-2xl tracking-[6px]">
               CELEBRATION OF JUDAISM
@@ -210,42 +85,11 @@ const Home: FC = () => {
         </section>
       </main>
 
-      <section className="w-screen bg-primary py-32 px-52">
-        <span className="mb-12 block font-cheddar-regular text-2xl tracking-[6px]">
-          MEET THE TEAM
-        </span>
-        <div className="grid grid-cols-4 gap-12">
-          {TEAM.map((e, idx) => (
-            <div key={idx}>
-              <img alt={`${e.name} Bear`} className="w-full" src={e.imgPath} />
-              <p className="mt-4 font-outfit-bold text-lg text-bold">
-                {e.name}
-              </p>
-              <p className="font-outfit-regular text-lg text-letter">
-                {e.position}
-              </p>
-              <p className="mt-4 font-outfit-regular text-base text-letter">
-                {e.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Faqs />
 
-      <section className="w-screen bg-primary py-32 px-52">
-        <span className="mb-12 block font-cheddar-regular text-2xl tracking-[6px]">
-          FREQUENTLY ASKED QUESTIONS
-        </span>
-        <div className="">
-          {FAQS.map((e, idx) => (
-            <span className="mb-6 block" key={idx}>
-              <Toggle text={e.heading} body={e.body} />
-            </span>
-          ))}
-        </div>
-      </section>
+      <Team />
 
-      <section className="grid w-screen grid-cols-2 bg-primary px-52">
+      <section className="grid w-screen grid-cols-1 bg-primary px-[10vw] md:grid-cols-2">
         <aside className="flex flex-col justify-center">
           <span className="block font-cheddar-regular text-2xl tracking-[6px]">
             ARE YOU JEWISH?
@@ -263,45 +107,9 @@ const Home: FC = () => {
         </aside>
       </section>
 
-      <section className="grid w-screen grid-cols-[1fr_2fr] bg-primary p-12">
-        <aside className="flex items-center justify-center p-2">
-          <span className="flex items-center">
-            <span className="text-right font-cheddar-regular text-base tracking-[6px]">
-              RECENT REGISTRATIONS
-            </span>
-            <span className="ml-2 block flex h-4 w-4 items-center justify-center rounded-full bg-bold p-1 text-sm text-white">
-              ?
-            </span>
-          </span>
-        </aside>
-        <aside className="flex items-center">
-          <GuestTicker />
-        </aside>
-      </section>
+      <Registrations />
 
-      <footer className="flex w-screen items-center justify-between bg-nav-button p-6 p-12">
-        <Link to="/">
-          <img
-            className="h-10"
-            src="Assets/Jews Bear Logo.png"
-            alt="Jews Okay Bears Logo"
-          />
-        </Link>
-        <span className="flex items-center">
-          {SOCIALS.map((e, idx) => (
-            <a
-              key={idx}
-              className="mx-3 block"
-              href={e.url}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img className="h-4" src={e.icon} alt={e.name} />
-            </a>
-          ))}
-          <img className="h-16" src="Assets/kosher.png" alt="Kosher" />
-        </span>
-      </footer>
+      <Footer />
     </>
   );
 };

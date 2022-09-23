@@ -89,7 +89,7 @@ const Landing: FC = () => {
       <main className="relative flex min-h-screen flex-col items-center justify-center bg-primary">
         <section className=" z-10 flex h-full w-screen -translate-y-10 flex-col items-center justify-center">
           <h1 className="h-20 font-outfit-regular text-3xl">{caption}</h1>
-          <div className="flex w-screen justify-center ">
+          <div className="flex w-screen justify-center px-10">
             {LETTERS.map((e, idx) => {
               return (
                 <div
