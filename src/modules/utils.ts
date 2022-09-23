@@ -18,13 +18,13 @@ const secondsToHours = (seconds: number) => {
   return Math.floor(seconds / (SEC_IN_MIN * MIN_IN_HOUR));
 };
 
-const hoursToDays = (hours: number) => {
-  if (hours < 0) {
-    return 0;
-  }
-
-  return Math.floor(hours / HR_IN_DAY);
-};
+// const hoursToDays = (hours: number) => {
+//   if (hours < 0) {
+//     return 0;
+//   }
+//
+//   return Math.floor(hours / HR_IN_DAY);
+// };
 
 const secondsToDays = (seconds: number) => {
   if (seconds < 0) {
